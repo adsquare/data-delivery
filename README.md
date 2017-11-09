@@ -1,4 +1,5 @@
-![adsquare](http://www.adsquare.com/logo_pos_rgb.png)
+![logo](http://www.adsquare.com/logo_pos_rgb.png)
+
 adsquare library for data providers, app-publishers and SSPs to support data transmission
 
 # Welcome to the adsquare data-delivery library
