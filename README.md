@@ -17,11 +17,11 @@ Providing bid-stream data is primarily used by Supply Side Platforms (SSPs) to t
 Providing raw location data to support adsquare's location graph, supporting adsquare's onboarding capabilities using location as a proxy.
 [Read more in the wiki here.](https://github.com/adsquare/data-delivery/wiki/Use-Case-2-%E2%80%93-Providing-Location-Data)
 
-**Use Case 3 – Providing segmented data (not yet supported)**
+**Use Case 3 – Providing segmented data (not yet supported via this library!)**
 
 Monetization of online data connected to Mobile Advertising IDs (targeting product "360°") and/or offline data connected to location (targeting product "LIVE!").
 
-**Use Case 4 – Providing Hashed Email (not yet supported)**
+**Use Case 4 – Providing Hashed Email (not yet supported via this library!)**
 
 Providing hashed emails to support adsquare's identity graph, supporting adsquare's onboarding capabilities using hashed email as an identifier.
 
