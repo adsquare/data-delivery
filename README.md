@@ -19,7 +19,7 @@ Providing raw location data to adsquare enables advertisers to target POIs, buil
 
 **Use Case 3 – Providing segmented data (not yet supported via this library!)**
 
-Monetization of data connected to Mobile Advertising IDs (targeting product "360°") and/or offline data connected to location (targeting product "LIVE!").
+Monetization of any pre-segmented data connected to Mobile Advertising IDs. This method will be added to the new library soon and will be the prefered way of transmitting data to adsquare. The old CSV based approach will continue to work.
 
 ## Structure
 
