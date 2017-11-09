@@ -9,12 +9,12 @@ This open-source library supports you to exchange data with the adsquare Audienc
 
 **[Use Case 1 – Providing bid-stream data](https://github.com/adsquare/data-delivery/wiki/Use-Case-1-%E2%80%93-Providing-bid-stream-data)**
 
-Providing bid-stream data is primarily used by Supply Side Platforms (SSPs) to transmit bid requests in a very efficient way to adsquare. This data is being used to support adsquare's onboarding capabilities as well as to support adsquare to create a realistic reach forecast for supply-side enrichment.
+Providing bid-stream data is primarily used by Supply Side Platforms (SSPs) to transmit bid requests in a very efficient way to adsquare. This data is being used to to build behavioral audience segments and to enable adsquare to to create a realistic reach forecast for their targeting products for the actual SSP supply.
 [Read more in the wiki here.](https://github.com/adsquare/data-delivery/wiki/Use-Case-1-%E2%80%93-Providing-bid-stream-data)
 
 **[Use Case 2 – Providing Location Data](https://github.com/adsquare/data-delivery/wiki/Use-Case-2-%E2%80%93-Providing-Location-Data)**
 
-Providing raw location data to support adsquare's location graph, supporting adsquare's onboarding capabilities using location as a proxy.
+Providing raw location data to adsquare helps adsquare to build geo-behavioral segments, provide location insights and footfall measurement as well as onboard offline data. 
 [Read more in the wiki here.](https://github.com/adsquare/data-delivery/wiki/Use-Case-2-%E2%80%93-Providing-Location-Data)
 
 **Use Case 3 – Providing segmented data (not yet supported via this library!)**
