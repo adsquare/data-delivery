@@ -1,4 +1,5 @@
-![logo_pos_rgb.png](https://bitbucket.org/repo/ng7kdoq/images/2807468506-logo_pos_rgb.png)
+![adsquare](http://www.adsquare.com/logo_pos_rgb.png)
+adsquare library for data providers, app-publishers and SSPs to support data transmission
 
 # Welcome to the adsquare data-delivery library
 
