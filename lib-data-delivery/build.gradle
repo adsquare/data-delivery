@@ -1,0 +1,65 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.commercehub.gradle.plugin:gradle-avro-plugin:0.7.0"
+    }
+}
+
+plugins {
+    id 'net.ltgt.apt' version '0.10'
+}
+
+apply plugin: "java"
+apply plugin: "com.commercehub.gradle.plugin.avro"
+ 
+
+sourceSets.main.resources.srcDirs = ['src/main/resources','src/generated/java']
+
+task generateAvro(type: com.commercehub.gradle.plugin.avro.GenerateAvroJavaTask) {
+    source("/avro")
+    outputDir = file("src/generated/java")
+}
+
+//compileJava.source(generateAvro.outputs)
+group = 'com.adsquare'
+project.version = 1.0
+
+jar {
+    baseName = 'lib-data-delivery'
+}
+
+avro{
+	fieldVisibility = "PRIVATE"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "org.apache.avro:avro:1.8.1"
+    compile "org.slf4j:slf4j-api:1.7.6"
+    
+    compileOnly "org.projectlombok:lombok:1.16.18"
+    
+    testCompile("junit:junit:[4.,)")
+    testCompile("org.mockito:mockito-all:1.10.19")
+    
+    apt "org.projectlombok:lombok:1.16.18"
+}
+
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
+

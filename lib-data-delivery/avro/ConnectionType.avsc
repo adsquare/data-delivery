@@ -1,0 +1,6 @@
+{
+   "namespace":"com.adsquare.delivery.events",
+   "type":"enum",
+   "name":"ConnectionType",
+   "symbols":["wifi", "cellular"]
+}
