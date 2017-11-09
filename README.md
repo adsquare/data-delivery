@@ -37,7 +37,7 @@ If you need any support, please contact adsquare at support@adsquare.com
 
 ## Communication
 
-- If you **need help**, post a question to the [adsquare support](support@adsquare.com).
+- If you **need help**, post a question to the [adsquare support](mailto:support@adsquare.com).
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
