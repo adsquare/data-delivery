@@ -15,7 +15,7 @@ Providing bid-stream data is primarily used by Supply Side Platforms (SSPs) to t
 **[Use Case 2 – Providing Location Data](https://github.com/adsquare/data-delivery/wiki/Use-Case-2-%E2%80%93-Providing-Location-Data)**
 
 Providing raw location data to support adsquare's location graph, supporting adsquare's onboarding capabilities using location as a proxy.
-Read more in the wiki here.](https://github.com/adsquare/data-delivery/wiki/Use-Case-2-%E2%80%93-Providing-Location-Data)
+[Read more in the wiki here.](https://github.com/adsquare/data-delivery/wiki/Use-Case-2-%E2%80%93-Providing-Location-Data)
 
 **Use Case 3 – Providing segmented data (not yet supported)**
 
