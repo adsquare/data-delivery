@@ -32,12 +32,9 @@ This library consists of two different projects, which are:
 1. The actual library called "lib-data-delivery", which provides the avro definition as well as bindings and supporting utilities for the actual data preparation.
 2. Examples for typical scenarios and use cases.
 
-If you need any support, please contact adsquare at support@adsquare.com
-
-
 ## Communication
 
-- If you **need help**, post a question to the [adsquare support](mailto:support@adsquare.com).
+- If you **need help**, contact the [adsquare support](mailto:support@adsquare.com).
 - If you **found a bug**, open an issue.
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
