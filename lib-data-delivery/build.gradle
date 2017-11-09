@@ -26,7 +26,7 @@ task generateAvro(type: com.commercehub.gradle.plugin.avro.GenerateAvroJavaTask)
     outputDir = file("src/generated/java")
 }
 
-//compileJava.source(generateAvro.outputs)
+compileJava.source(generateAvro.outputs)
 group = 'com.adsquare'
 project.version = 1.0
 

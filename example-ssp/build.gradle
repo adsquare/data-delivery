@@ -22,14 +22,13 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile "org.apache.avro:avro:1.8.1"
+    compile project(':lib-data-delivery')
     
+    compile "org.apache.avro:avro:1.8.1"
     compile "org.slf4j:slf4j-api:1.7.6"
     compile "com.google.openrtb:openrtb-core:1.5.0"
     compile "com.fasterxml.jackson.core:jackson-databind:2.9.2"
-    compile project(':lib-data-delivery')
-    
-    compileOnly "org.projectlombok:lombok:1.16.18"
+    compile "org.projectlombok:lombok:1.16.18"
     
     testCompile("junit:junit:[4.,)")
     testCompile("org.mockito:mockito-all:1.10.19")
