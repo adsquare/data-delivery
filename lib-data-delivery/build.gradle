@@ -28,7 +28,7 @@ task generateAvro(type: com.commercehub.gradle.plugin.avro.GenerateAvroJavaTask)
 
 compileJava.source(generateAvro.outputs)
 group = 'com.adsquare'
-project.version = 1.0
+project.version = 1.1
 
 jar {
     baseName = 'lib-data-delivery'
