@@ -71,7 +71,7 @@
          "name":"id_type",
          "type":[  
             "null",
-            "IdType"
+            "string"
          ],
          "default":null
       },
