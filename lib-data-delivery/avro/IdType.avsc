@@ -1,6 +1,0 @@
-{
-   "namespace":"com.adsquare.delivery.events",
-   "type":"enum",
-   "name":"IdType",
-   "symbols":["aaid", "idfa"]
-}

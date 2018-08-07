@@ -41,6 +41,7 @@ import org.apache.avro.specific.SpecificDatumWriter;
 import com.adsquare.delivery.events.DataEvent;
 
 import lombok.Cleanup;
+import lombok.Data;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -88,7 +89,7 @@ public class DataEventSerializer {
 	 * 
 	 * @param eventStream
 	 *            a stream of valid and normalized {@link DataEvent}.
-	 * @param out
+	 * @param outSupplier
 	 *            a {@link Supplier} of an output stream
 	 * @throws IOException
 	 */

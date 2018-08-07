@@ -69,19 +69,18 @@ public class SampleSSPConverter {
 		// iterate over all logfile lines
 		try (Stream<String> stream = Files.lines(Paths.get(logFile))) {
 			// and convert into a list of (validated and normalized) avro events
-//			Stream<DataEvent> events = …
-			Stream<DataEvent> events = …;
-			final Stream<DataEvent> normalizedStream = events
-				.map(EventUtils::normalizeAndCheckDataEvent)
-				.filter(Optional::isPresent)
-				.map(Optional::get);
-			DataEventSerializer.writeToFile(normalizedStream, new File("export.avro"));
-			
+
 			
 			final Stream<DataEvent> eventStream = stream.map(convert).filter(optional -> optional.isPresent()).map(optional -> optional.get());
+			final Stream<DataEvent> normalizedStream = eventStream
+					.map(EventUtils::normalizeAndCheckDataEvent)
+					.filter(Optional::isPresent)
+					.map(Optional::get);
+
+
 			// persist all events into avro container file
 			File export = new File(logFile.getPath() + ".avro");
-			DataEventSerializer.writeToFile(eventStream, export);
+			DataEventSerializer.writeToFile(normalizedStream, export);
 			/*
 			 * TODO for the SSP: upload this avro file to your AWS S3 bucket,
 			 * which adsquare can access: filename should be like:

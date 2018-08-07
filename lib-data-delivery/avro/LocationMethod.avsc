@@ -1,6 +1,0 @@
-{
-   "namespace":"com.adsquare.delivery.events",
-   "type":"enum",
-   "name":"LocationMethod",
-   "symbols":["wifi", "cellular", "fused", "gps", "ip", "user"]
-}

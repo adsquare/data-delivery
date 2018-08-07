@@ -103,7 +103,7 @@
          "name":"location_method",
          "type":[  
             "null",
-            "LocationMethod"
+            "string"
          ],
          "default":null
       },
@@ -111,7 +111,7 @@
          "name":"location_context",
          "type":[  
             "null",
-            "LocationContext"
+            "string"
          ],
          "default":null
       },

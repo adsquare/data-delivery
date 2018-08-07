@@ -28,8 +28,6 @@ import java.util.Optional;
 import com.adsquare.delivery.events.ConnectionType;
 import com.adsquare.delivery.events.DataEvent;
 import com.adsquare.delivery.events.DataEvent.Builder;
-import com.adsquare.delivery.events.IdType;
-import com.adsquare.delivery.events.LocationMethod;
 import com.adsquare.delivery.io.EventUtils;
 import com.google.openrtb.OpenRtb.BidRequest;
 import com.google.openrtb.OpenRtb.LocationType;
@@ -103,14 +101,14 @@ public class BidRequestToAvroConverter {
 	 *            the input bidrequest
 	 * @return the IDType or null
 	 */
-	private static IdType parseIDType(BidRequest request) {
+	private static String parseIDType(BidRequest request) {
 		/*
 		 * please note, this method is just a simple example, there are better
 		 * algorithms to determine the device type
 		 */
 		boolean apple = request.getDevice().getMake().trim().toLowerCase().contains("apple");
 		boolean maidPresent = request.getDevice().getIfa() != null;
-		return maidPresent ? (apple ? IdType.idfa : IdType.aaid) : null;
+		return maidPresent ? (apple ? "idfa" : "aaid") : null;
 	}
 
 	/**
@@ -143,23 +141,23 @@ public class BidRequestToAvroConverter {
 
 	/**
 	 * Converts the {@link LocationType} of the bid request to the
-	 * {@link LocationMethod}, which is required by the {@link DataEvent} class.
+	 * LocationMethod as String, which is required by the {@link DataEvent} class.
 	 * 
 	 * @param locationType
 	 *            the input from the bid request
-	 * @return the equivalent {@link LocationMethod} or null
+	 * @return the equivalent LocationMethod as String or null
 	 */
-	private static LocationMethod convertLocationType(LocationType locationType) {
+	private static String convertLocationType(LocationType locationType) {
 		if (locationType == null) {
 			return null;
 		}
 		switch (locationType) {
 		case GPS_LOCATION:
-			return LocationMethod.gps;
+			return "gps";
 		case IP:
-			return LocationMethod.ip;
+			return "ip";
 		case USER_PROVIDED:
-			return LocationMethod.user;
+			return "user";
 		default:
 			return null;
 		}

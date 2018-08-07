@@ -1,6 +1,0 @@
-{
-   "namespace":"com.adsquare.delivery.events",
-   "type":"enum",
-   "name":"LocationContext",
-   "symbols":["bground", "fground", "unknown", "passive", "regular", "visit_entry", "visit_exit"]
-}

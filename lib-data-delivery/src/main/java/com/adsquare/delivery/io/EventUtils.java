@@ -43,13 +43,46 @@ public class EventUtils {
 			return false;
 		}
 
-		boolean containsAdId = event.getAdId() != null && !event.getAdId().trim().isEmpty();
+		boolean containsAdId = event.getAdId() != null && !event.getAdId().toString().trim().isEmpty();
 		boolean containsLocation = event.getLatitude() != null && event.getLongitude() != null;
 
 		// if an event does not contain an AdID nor a location, it's invalid
 		if (!containsAdId && !containsLocation) {
 			return false;
 		}
+
+		if (event.getIdType() != null){
+			if (!event.getIdType().toString().equals("idfa") && !event.getIdType().toString().equals("aaid")){
+				return false;
+			}
+		}
+		if (event.getLocationMethod() != null){
+			if (
+					!event.getLocationMethod().toString().equals("wifi") &&
+					!event.getLocationMethod().toString().equals("cellular") &&
+					!event.getLocationMethod().toString().equals("fused") &&
+					!event.getLocationMethod().toString().equals("gps") &&
+					!event.getLocationMethod().toString().equals("ip") &&
+					!event.getLocationMethod().toString().equals("user") &&
+					!event.getLocationMethod().toString().equals("beacon"))
+			{
+				return false;
+			}
+		}
+		if (event.getLocationContext() != null){
+			if (
+					!event.getLocationContext().toString().equals("bground") &&
+					!event.getLocationContext().toString().equals("fground") &&
+					!event.getLocationContext().toString().equals("unknown") &&
+					!event.getLocationContext().toString().equals("passive") &&
+					!event.getLocationContext().toString().equals("regular") &&
+					!event.getLocationContext().toString().equals("visit_entry") &&
+					!event.getLocationContext().toString().equals("visit_exit"))
+			{
+				return false;
+			}
+		}
+
 
 		// otherwise it's a valid event
 		return true;
@@ -63,7 +96,7 @@ public class EventUtils {
 	 */
 	public final static DataEvent normalizeDataEvent(final DataEvent input) {
 		DataEvent retVal = DataEvent.newBuilder(input).build();
-		retVal.setAdId(input.getAdId() != null ? input.getAdId().trim().toLowerCase() : null);
+		retVal.setAdId(input.getAdId() != null ? input.getAdId().toString().trim().toLowerCase() : null);
 		retVal.setLongitude(input.getLongitude() != null && input.getLongitude().doubleValue() != 0.0d ? input.getLongitude() : null);
 		retVal.setLatitude(input.getLatitude() != null && input.getLatitude().doubleValue() != 0.0d ? input.getLatitude() : null);
 		return retVal;
