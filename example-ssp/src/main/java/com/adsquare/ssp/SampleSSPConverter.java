@@ -34,6 +34,7 @@ import java.util.stream.Stream;
 
 import com.adsquare.delivery.events.DataEvent;
 import com.adsquare.delivery.io.DataEventSerializer;
+import com.adsquare.delivery.io.EventUtils;
 import com.google.openrtb.OpenRtb.BidRequest;
 import com.google.openrtb.json.OpenRtbJsonFactory;
 import com.google.openrtb.json.OpenRtbJsonReader;
@@ -68,6 +69,15 @@ public class SampleSSPConverter {
 		// iterate over all logfile lines
 		try (Stream<String> stream = Files.lines(Paths.get(logFile))) {
 			// and convert into a list of (validated and normalized) avro events
+//			Stream<DataEvent> events = …
+			Stream<DataEvent> events = …;
+			final Stream<DataEvent> normalizedStream = events
+				.map(EventUtils::normalizeAndCheckDataEvent)
+				.filter(Optional::isPresent)
+				.map(Optional::get);
+			DataEventSerializer.writeToFile(normalizedStream, new File("export.avro"));
+			
+			
 			final Stream<DataEvent> eventStream = stream.map(convert).filter(optional -> optional.isPresent()).map(optional -> optional.get());
 			// persist all events into avro container file
 			File export = new File(logFile.getPath() + ".avro");

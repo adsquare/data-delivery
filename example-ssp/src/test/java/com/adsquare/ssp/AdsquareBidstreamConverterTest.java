@@ -25,6 +25,7 @@ package com.adsquare.ssp;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Optional;
 
 import org.apache.avro.file.DataFileStream;
 import org.junit.Assert;
@@ -32,6 +33,7 @@ import org.junit.Test;
 
 import com.adsquare.delivery.events.DataEvent;
 import com.adsquare.delivery.io.DataEventDeserializer;
+import com.adsquare.delivery.io.EventUtils;
 
 import lombok.Cleanup;
 
@@ -45,5 +47,9 @@ public class AdsquareBidstreamConverterTest {
 		@Cleanup
 		DataFileStream<DataEvent> isStream = DataEventDeserializer.readFromAvroFile(avroFileName);
 		Assert.assertNotNull(isStream);
+		
+		DataEvent event = DataEvent.newBuilder().build();
+		Optional<DataEvent> normalizedAndCheckedDataEvent = EventUtils.normalizeAndCheckDataEvent(event);
+		
 	}
 }
