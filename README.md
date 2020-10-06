@@ -1,5 +1,3 @@
-![logo](http://www.adsquare.com/logo_pos_rgb.png)
-
 adsquare library for data providers to support data transmission
 
 # Welcome to the adsquare data-delivery library
@@ -7,10 +5,10 @@ adsquare library for data providers to support data transmission
 This open-source library supports you to transmit data to adsquare . The following use cases are currently supported:
 
 
-**[Use Case 1 – Providing Location Data](https://github.com/adsquare/data-delivery/wiki/Use-Case-2-%E2%80%93-Providing-Location-Data)**
+**[Use Case 1 – Providing Location Data](https://github.com/adsquare/data-delivery/wiki/Use-Case-1-%E2%80%93-Providing-Location-Data)**
 
 Providing raw location data to adsquare enables advertisers to target POIs, build geo-behavioral segments and gain location insights as well as onboard offline data. 
-[Read more in the wiki here.](https://github.com/adsquare/data-delivery/wiki/Use-Case-2-%E2%80%93-Providing-Location-Data)
+[Read more in the wiki here.](https://github.com/adsquare/data-delivery/wiki/Use-Case-1-%E2%80%93-Providing-Location-Data)
 
 
 ## Structure
